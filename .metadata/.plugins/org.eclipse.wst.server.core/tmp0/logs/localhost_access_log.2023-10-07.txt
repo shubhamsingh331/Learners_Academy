@@ -1,0 +1,12 @@
+127.0.0.1 - - [07/Oct/2023:22:51:10 +0530] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [07/Oct/2023:22:51:13 +0530] "GET /Learners_Academy/login.jsp HTTP/1.1" 200 457
+127.0.0.1 - - [07/Oct/2023:22:51:22 +0530] "POST /Learners_Academy/loginv.jsp HTTP/1.1" 302 -
+127.0.0.1 - - [07/Oct/2023:22:51:22 +0530] "GET /Learners_Academy/Fail.jsp HTTP/1.1" 200 640
+127.0.0.1 - - [07/Oct/2023:22:51:50 +0530] "POST /Learners_Academy/loginv.jsp HTTP/1.1" 302 -
+127.0.0.1 - - [07/Oct/2023:22:51:50 +0530] "GET /Learners_Academy/Homepage.jsp HTTP/1.1" 200 345
+127.0.0.1 - - [07/Oct/2023:22:51:58 +0530] "GET /Learners_Academy/Course/Course.jsp HTTP/1.1" 200 1241
+127.0.0.1 - - [07/Oct/2023:22:52:11 +0530] "POST /Learners_Academy/Course/AddCourse.jsp HTTP/1.1" 302 -
+127.0.0.1 - - [07/Oct/2023:22:52:12 +0530] "GET /Learners_Academy/Course/addsuccess.jsp HTTP/1.1" 200 1039
+127.0.0.1 - - [07/Oct/2023:22:52:35 +0530] "GET /Learners_Academy/Course/edit.jsp?id=3 HTTP/1.1" 200 634
+127.0.0.1 - - [07/Oct/2023:22:52:46 +0530] "POST /Learners_Academy/Course/editController.jsp HTTP/1.1" 302 -
+127.0.0.1 - - [07/Oct/2023:22:52:47 +0530] "GET /Learners_Academy/Course/editSuccessful.jsp HTTP/1.1" 200 1027

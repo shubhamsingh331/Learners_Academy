@@ -1,0 +1,23 @@
+package department;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletRequest;
+
+import DBUtil.DbUtil;
+
+public class departmentDAO {
+	public int create(departmentPojo dept) throws ClassNotFoundException, SQLException {
+		Connection con = DbUtil.dbcon();
+		
+		String createTableSQL = "CREATE TABLE " + dept.getTablename() + " (" +
+                "id INT primary key auto_increment," +
+                "subject VARCHAR(255)," +
+                "teachername varchar(255))";
+		
+		return 0;
+		
+	}
+
+}

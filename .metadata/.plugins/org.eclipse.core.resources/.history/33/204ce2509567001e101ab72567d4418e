@@ -1,0 +1,71 @@
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="department.departmentDAO"%>
+<%@page import="department.departmentPojo"%>
+<%@page import="subjects.SubjectsDAO"%>
+<%@page import="subjects.SubjectsPojo"%>
+<%@page import="teachers.TeachersPojo"%>
+<%@page import="java.util.List"%>
+<%@page import="teachers.TeachersDAO"%>
+
+
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.Statement"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+String jdbcUrl = "jdbc:mysql://localhost:3306/StudentManagement";
+String dbUsername = "root";
+String dbPassword = "123456";
+
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Connection conn = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword);
+
+
+    
+        String createTableSQL = "CREATE TABLE " + request.getParameter("dept") + " (" +
+                                "id INT primary key auto_increment," +
+                                "subject VARCHAR(255)," +
+                                "teachername varchar(255))";
+        PreparedStatement ps = conn.prepareStatement(createTableSQL);
+        ps.execute();
+%>
+
+<h3><i>Add Subjects and Teachers to <%=request.getParameter("dept") %> Department</i></h3>
+<form method="post">
+Select Teacher <select name="teacher">
+<%
+TeachersDAO dao = new TeachersDAO();
+List<TeachersPojo> list = dao.option();
+
+for(TeachersPojo t:list){
+%>
+<option value="<%=t.getId()%>"><%=t.getFname() %>&nbsp<%=t.getLname() %></option>
+<%} %>
+</select>
+<br>
+<br>
+Select Subject <select name="subject">
+<%
+SubjectsDAO dao1 = new SubjectsDAO();
+List<SubjectsPojo> list1 = dao1.option();
+
+for(SubjectsPojo s:list1){
+%>
+<option value="<%=s.getSubid()%>"><%=s.getSubname() %></option>
+<%} %>
+</select><br>
+<br>
+<input type="submit" value="Add">
+<input type="reset" value="Reset">
+</form>
+
+</body>
+</html>

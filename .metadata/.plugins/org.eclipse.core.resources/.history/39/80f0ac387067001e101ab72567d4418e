@@ -1,0 +1,38 @@
+package multipletables;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class multipletables {
+
+	public static void main(String[] args) throws SQLException, ClassNotFoundException {
+		// TODO Auto-generated method stub
+		String jdbcUrl = "jdbc:mysql://localhost:3306/db9";
+		String dbUsername = "root";
+		String dbPassword = "123456";
+		
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection connection = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword);
+		
+		String tableName = ;
+		try {
+		    Statement statement = connection.createStatement();
+		    
+		        String createTableSQL = "CREATE TABLE " + tableName + " (" +
+		                                "id INT PRIMARY KEY AUTO_INCREMENT," +
+		                                "name VARCHAR(255)," +
+		                                "age INT)";
+		        statement.executeUpdate(createTableSQL);
+		        System.out.println("Table " + tableName + " created successfully!");
+		    
+		    statement.close();
+		} catch (SQLException e) {
+		    e.printStackTrace();
+		}
+
+	}
+
+}

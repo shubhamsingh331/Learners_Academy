@@ -1,0 +1,39 @@
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.Statement"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+String jdbcUrl = "jdbc:mysql://localhost:3306/db9";
+String dbUsername = "root";
+String dbPassword = "123456";
+
+Class.forName("com.mysql.cj.jdbc.Driver");
+Connection conn = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword);
+String tableName = request.getParameter("tableName");
+String columnName = request.getParameter("columnName");
+String columnType = request.getParameter("columnType");
+
+if (tableName != null && columnName != null && columnType != null) {
+    try {
+        Statement statement = conn.createStatement();
+        String createTableSQL = "CREATE TABLE " + tableName + " (" +
+                                columnName + " " + columnType + ")";
+        statement.executeUpdate(createTableSQL);
+        out.println("Table " + tableName + " created successfully!");
+        statement.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+        out.println("Error creating the table.");
+    }
+}
+%>
+</body>
+</html>

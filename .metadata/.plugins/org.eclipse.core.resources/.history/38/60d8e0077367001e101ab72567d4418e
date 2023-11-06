@@ -1,0 +1,17 @@
+package multipletables;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class TestDAO {
+	public boolean create(Test t) throws ClassNotFoundException, SQLException {
+		Connection con = DbUtil.dbcon();
+		String sql = "create table ?(id int, name varchar(20))";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setString(1, t.getTable());
+		
+		return ps.execute();
+	}
+
+}

@@ -1,0 +1,75 @@
+package teachers;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import DBUtil.DbUtil;
+
+public class TeachersDAO {
+	public int insert(TeachersPojo teachers) throws ClassNotFoundException, SQLException {
+		Connection con = DbUtil.dbcon();
+		String sql = "insert into teachers values(?,?,?,?,?,?)";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, teachers.getId());
+		ps.setString(2, teachers.getFname());
+		ps.setString(3, teachers.getLname());
+		ps.setString(4, teachers.getDob());
+		ps.setString(5, teachers.getAddress());
+		ps.setLong(6, teachers.getPhono());
+		
+		return ps.executeUpdate();
+	}
+	
+	public int update(TeachersPojo teachers) throws ClassNotFoundException, SQLException {
+		Connection con = DbUtil.dbcon();
+		String sql = "update teachers set fname=?, lname=?, dob=?, address=?, phono=? where id =?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(6, teachers.getId());
+		ps.setString(1, teachers.getFname());
+		ps.setString(2, teachers.getLname());
+		ps.setString(3, teachers.getDob());
+		ps.setString(4, teachers.getAddress());
+		ps.setLong(5, teachers.getPhono());
+		
+		return ps.executeUpdate();
+	}
+	
+	public int delete(TeachersPojo teachers) throws ClassNotFoundException, SQLException {
+		Connection con = DbUtil.dbcon();
+		String sql = "delete from teachers where id =?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, teachers.getId());
+		
+		
+		return ps.executeUpdate();
+	}
+	
+	public List<TeachersPojo> display() throws ClassNotFoundException, SQLException{
+		Connection con = DbUtil.dbcon();
+		
+		List<TeachersPojo> list = new ArrayList();
+		String sql = "select * from teachers";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		
+		while(rs.next()) {
+			TeachersPojo teachers = new TeachersPojo();
+			teachers.setId(rs.getInt(1));
+			teachers.setFname(rs.getString(2));
+			teachers.setLname(rs.getString(3));
+			teachers.setDob(rs.getString(4));
+			teachers.setAddress(rs.getString(5));
+			teachers.setPhono(rs.getLong(6));
+			
+			list.add(teachers);
+		}
+		return list;
+				
+		
+	}
+
+}

@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="">Home</a>
+  <a href="Subject.jsp">Subjects</a>
+  <a href="#contact">Batch</a>
+  <a href="#about">Students</a>
+</div>
+<br>
+<h3><i>Deletion Successful</i></h3>
+<%@include file="Subdisplay.jsp" %>
+</body>
+</html>

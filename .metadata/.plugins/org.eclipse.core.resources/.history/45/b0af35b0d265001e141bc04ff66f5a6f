@@ -1,0 +1,24 @@
+package teachers;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import DBUtil.DbUtil;
+
+public class TeachersDAO {
+	public int insert(TeachersPojo teachers) throws ClassNotFoundException, SQLException {
+		Connection con = DbUtil.dbcon();
+		String sql = "insert into teachers values(?,?,?,?,?,?)";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, teachers.getId());
+		ps.setString(2, teachers.getFname());
+		ps.setString(3, teachers.getLname());
+		ps.setString(4, teachers.getDob());
+		ps.setString(5, teachers.getAddress());
+		ps.setLong(6, teachers.getPhono());
+		
+		return ps.executeUpdate();
+	}
+
+}

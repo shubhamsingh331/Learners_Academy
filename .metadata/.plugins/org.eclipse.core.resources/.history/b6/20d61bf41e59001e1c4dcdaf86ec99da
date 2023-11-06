@@ -1,0 +1,56 @@
+package com.example.main;
+
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
+import com.example.dao.CrudController;
+import com.example.pojo.Employee;
+
+public class EmployeeMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
+		
+		Metadata md = new MetadataSources(ssr).getMetadataBuilder().build();
+		
+		SessionFactory sf = md.getSessionFactoryBuilder().build();
+		
+		Session session = sf.openSession();
+		
+		Transaction tran = session.beginTransaction();
+		
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the Employee id");
+		Employee e = new Employee();
+		
+		e.setEmpno(sc.nextInt());
+		
+		System.out.println("Enter Employee Name");
+		e.setEmpname(sc.next());
+		
+		System.out.println("Enter Employee Email");
+		e.setEmail(sc.next());
+		
+		
+		CrudController crud = new CrudController();
+		String s = crud.update(session, e);
+		
+		System.out.println(s);
+		
+		tran.commit();
+		session.close();
+		sf.close();
+	}
+
+}

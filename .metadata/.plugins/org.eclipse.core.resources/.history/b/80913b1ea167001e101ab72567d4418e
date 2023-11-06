@@ -1,0 +1,68 @@
+<%@page import="subjects.SubjectsPojo"%>
+<%@page import="subjects.SubjectsDAO"%>
+<%@page import="teachers.TeachersPojo"%>
+<%@page import="java.util.List"%>
+<%@page import="teachers.TeachersDAO"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form>
+Course<select>
+<%
+String jdbcUrl = "jdbc:mysql://localhost:3306/StudentManagement1";
+String dbUsername = "root";
+String dbPassword = "123456";
+
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Connection conn = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword);
+    String sql = "show tables";
+    PreparedStatement ps = conn.prepareStatement(sql);
+    ResultSet rs = ps.executeQuery();
+    while(rs.next()){
+    	%>
+    	
+<option><%=rs.getString(1) %></option>
+<%} %>
+<br>
+<br>
+
+Select Subject <select name="subject">
+<%
+SubjectsDAO dao1 = new SubjectsDAO();
+List<SubjectsPojo> list1 = dao1.option();
+
+for(SubjectsPojo s:list1){
+%>
+<option value="<%=s.getSubid()%>"><%=s.getSubname() %></option>
+<%} %>
+</select>
+Select Teacher <select name="teacher">
+<%
+TeachersDAO dao = new TeachersDAO();
+List<TeachersPojo> list = dao.option();
+
+for(TeachersPojo t:list){
+%>
+<option value="<%=t.getId()%>"><%=t.getFname() %>&nbsp<%=t.getLname() %></option>
+<%} %>
+</select>
+<br>
+<br><br>
+<br>
+
+<input type="submit" value="Add">
+<input type="reset" value="Reset">
+</select>
+</form>
+</body>
+</html>

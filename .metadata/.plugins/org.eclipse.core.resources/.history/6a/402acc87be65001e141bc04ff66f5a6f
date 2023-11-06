@@ -1,0 +1,19 @@
+package subjects;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import DBUtil.DbUtil;
+
+public class SubjectsDAO {
+	public int insert(SubjectsPojo subject) throws ClassNotFoundException, SQLException {
+		Connection con = DbUtil.dbcon();
+		String sql = "insert into subjects values(?,?)";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, subject.getSubid());
+		ps.setString(2, subject.getSubname());
+		return ps.executeUpdate();
+	}
+
+}

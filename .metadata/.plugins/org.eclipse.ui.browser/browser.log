@@ -1,0 +1,41 @@
+
+Oct 09, 2023 16:39:35.992 NEW SESSION
+Oct 09, 2023 16:39:35.992 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Oct 09, 2023 16:39:56.688 [12824:17280:1009/163956.687:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -118
+
+Oct 09, 2023 23:54:14.960 NEW SESSION
+Oct 09, 2023 23:54:14.960 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+Oct 10, 2023 10:07:19.766 NEW SESSION
+Oct 10, 2023 10:07:19.767 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Oct 10, 2023 10:07:36.695 [20256:16884:1010/100736.694:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -118
+
+Oct 10, 2023 23:47:39.907 NEW SESSION
+Oct 10, 2023 23:47:39.907 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Oct 10, 2023 23:48:00.914 [27824:22168:1010/234800.914:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -118
+Oct 11, 2023 24:41:37.455 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Oct 11, 2023 24:41:58.518 [25080:8956:1011/004158.518:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -118
+Oct 11, 2023 24:44:19.294 [25080:27896:1011/004419.294:ERROR:CONSOLE(337)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (337)
+
+Oct 11, 2023 24:52:59.317 NEW SESSION
+Oct 11, 2023 24:52:59.317 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Oct 11, 2023 24:53:20.05 [18124:8188:1011/005320.004:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -118
+
+Oct 11, 2023 08:50:49.301 NEW SESSION
+Oct 11, 2023 08:50:49.302 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Oct 11, 2023 08:51:06.735 [3084:7928:1011/085106.734:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -118
+Oct 11, 2023 08:51:48.66 [3084:12136:1011/085148.066:ERROR:CONSOLE(337)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (337)
+
+Oct 11, 2023 12:31:03.264 NEW SESSION
+Oct 11, 2023 12:31:03.264 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Oct 11, 2023 12:31:22.913 [24140:17164:1011/123122.913:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -118
+Oct 11, 2023 14:36:02.267 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Oct 11, 2023 14:36:22.963 [3848:26896:1011/143622.963:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -118
+Oct 11, 2023 15:13:57.574 [3848:26896:1011/151357.574:ERROR:mcs_client.cc(750)] Received close command, resetting connection.
+Oct 11, 2023 15:14:18.779 [3848:26896:1011/151418.779:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -118
+Oct 11, 2023 15:17:00.917 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Oct 11, 2023 15:17:21.550 [26036:26172:1011/151721.549:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -118
+
+Oct 12, 2023 10:43:08.552 NEW SESSION
+Oct 12, 2023 10:43:08.552 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Oct 12, 2023 10:43:28.911 [23748:10488:1012/104328.910:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -118

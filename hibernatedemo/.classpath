@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/byte-buddy-1.12.9.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/classmate-1.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/dom4j-2.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/hibernate-commons-annotations-5.1.2.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/hibernate-core-jakarta-5.6.10.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/istack-commons-runtime-4.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/jakarta.activation-2.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/jakarta.activation-api-2.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/jakarta.persistence-api-3.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/jakarta.transaction-api-2.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/jakarta.xml.bind-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/jandex-2.4.2.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/jaxb-core-3.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/jaxb-runtime-3.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/jboss-logging-3.4.3.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Hibernate/txw2-3.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/singhjqw/Downloads/mysql-connector-java-8.0.29.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

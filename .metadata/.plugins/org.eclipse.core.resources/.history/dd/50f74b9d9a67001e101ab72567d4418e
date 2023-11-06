@@ -1,0 +1,36 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3><i>Add New Department</i></h3>
+<form action="Assign.jsp" method="post">
+Department Name<br>
+<input type="text" placeholder="Deptartment" name="dept">
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</form>
+<% 
+String jdbcUrl = "jdbc:mysql://localhost:3306/StudentManagement";
+String dbUsername = "root";
+String dbPassword = "123456";
+
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    Connection conn = DriverManager.getConnection(jdbcUrl, dbUsername, dbPassword);
+    String sql = "select * from " +session.getAttribute("dept");
+    PreparedStatement ps = conn.prepareStatement(sql);
+    ResultSet rs = ps.executeQuery();
+    while(rs.next()){
+    	%>
+    	<tr><td><%=rs.getString("id") %></td><td><%=rs.getString("subject") %></td><td><%=rs.getString("teachername") %></td></tr>
+<%}%>
+</body>
+</html>

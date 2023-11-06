@@ -1,0 +1,6 @@
+package teachers;
+
+public class SubjectsPojo {
+	private int id;
+	
+}
